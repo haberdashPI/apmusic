@@ -1,0 +1,42 @@
+# You can update the names of these files if you want to use newly preprocessed data.
+# Each filename has a corresponding *.py or *.R file with a shared filename prefix.
+
+discrim_data = 'discrim_2017-12-31.csv'
+sample_file = 'standard_model_2017-12-31_09.38.25.h5' # standard_model_2015-11-10_11.53.36.h5'
+musician_sample_file = 'musician_model_2016-01-07_15.22.38.h5'
+class_data = 'class_2017-12-31.csv'
+
+fig1A_model = 'fig1A_model_2017-12-31.csv'
+fig1A_data = 'fig1A_data_2017-12-31.csv'
+fig1B_model = 'fig1B_model_2017-12-31.csv'
+fig1B_data = 'fig1B_data_2017-12-31.csv'
+fig1C_model = 'fig1C_model_2017-12-31.csv'
+fig1C_data = 'fig1C_data_2017-12-31.csv'
+
+fig2A_model = 'fig2A_model_2017-12-31.csv'
+fig2A_data = 'fig2A_data_2017-12-31.csv'
+fig2A_samples = 'fig2A_samples_2017-12-31.h5'
+fig2A_byfoil_samples = 'fig2A_byfoil_samples_2017-12-31.h5'
+fig2B_model = 'fig2B_model_2017-12-31.csv'
+fig2B_data = 'fig2B_data_2017-12-31.csv'
+
+fig3A_samples = 'fig3A_samples_2017-12-31.h5'
+fig3A_data = 'fig3A_data_2017-12-31.csv'
+fig3A_model = 'fig3A_model_2017-12-31.csv'
+fig3B_samples = 'fig3B_samples_2017-12-31.h5'
+fig3B_samples_byregimen = 'fig3B_samples_byregimen_2017-12-31.h5'
+fig3B_samples_byfoil = 'fig3B_samples_byfoil_2017-12-31.h5'
+fig3B_data = 'fig3B_data_2017-12-31.csv'
+fig3B_model = 'fig3B_model_2017-12-31.csv'
+
+fig4A_samples = 'fig4A_samples_2017-12-31.h5'
+fig4A_data = 'fig4A_data_2017-12-31.csv'
+fig4A_model = 'fig4A_model_2017-12-31.csv'
+fig4B_samples = 'fig4B_samples_2017-12-31.h5'
+fig4B_samples_no_outlier = 'fig4B_samples_no_outlier_2017-12-31.h5'
+fig4B_data = 'fig4B_data_2017-12-31.csv'
+fig4B_model = 'fig4B_model_2017-12-31.csv'
+fig4C_samples_byregimen = 'fig4C_samples_byregimen_2017-12-31.h5'
+fig4C_samples_byfoil = 'fig4C_samples_byfoil_2017-12-31.h5'
+fig4C_data = 'fig4C_data_2017-12-31.csv'
+fig4C_model = 'fig4C_model_2017-12-31.csv'
