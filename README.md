@@ -95,11 +95,11 @@ To start all analyses over from scratch, delete all of the preprocessing
 data files under the `preprocessing/data` directory. Then, rerun the
 preprocessing scripts in the following order
 
-1. Aggregate discrimination data - `preprocessing/discrim.R`
-2. Aggregate classification data - `preprocessing/class.R`
-3. Multi-level model fitting - `preprocessing/multi_level_sample.py` 
-4. Multi-level model fitting with musical experience - `preprocessing/music_multi_level_sample.py` 
-5. Each figure's preprocessing scripts - `preprocessing/fig1A.py`, `preprocessing/fig1B.py` 
+1. Aggregate discrimination data - `Rscript preprocessing/discrim.R`
+2. Aggregate classification data - `Rscript preprocessing/class.R`
+3. Multi-level model fitting - `python preprocessing/multi_level_sample.py` 
+4. Multi-level model fitting with musical experience - `python preprocessing/music_multi_level_sample.py` 
+5. Each figure's preprocessing scripts - `python preprocessing/fig1A.py`, then `python preprocessing/fig1B.py`,
 etc...
 
 Steps 2 and 3 will be the most time consuming (e.g. ~30 minutes on a 2015 MacBook Air).
