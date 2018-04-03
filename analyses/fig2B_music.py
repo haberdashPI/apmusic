@@ -19,7 +19,7 @@ imp = 4*np.array([[0,0,0,1,0,0],
 imp_s = np.einsum('ij,jk->ik',model.fit['gamma_1'][:,1,:],imp.T)
 print "----------------------------------------"
 print "% improvement as a function of musical experience "
-print ss.coef_stats(100*(logit(imp_s)-0.5).reshape(-1))
+print ss.coef_stats(100*(ilogit(imp_s)-0.5).reshape(-1))
 
 d = (model.init.df.query('day in [1,4]').
      groupby(['day','regimen','sid','foil_label','experience']).

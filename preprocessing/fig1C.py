@@ -10,7 +10,7 @@ cs = np.ones((200,2))
 cs[:,1] = np.linspace(0,15,200)
 start = np.array([1,1./3,1./3,0,0,0])
 Xs = np.einsum('ik,jkh->jih',cs,model.fit['gamma_1'])
-X = logit(np.einsum('ijk,k->ij',Xs,start))*100
+X = ilogit(np.einsum('ijk,k->ij',Xs,start))*100
 rmodel = ss.coef_table(X,cs[:,1]).reset_index()
 
 rmodel['experience'] = rmodel['index'].astype('float64')
