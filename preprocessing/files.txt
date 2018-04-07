@@ -19,6 +19,8 @@ fig2A_samples = 'fig2A_samples_2017-12-31.h5'
 fig2A_byfoil_samples = 'fig2A_byfoil_samples_2017-12-31.h5'
 fig2B_model = 'fig2B_model_2017-12-31.csv'
 fig2B_data = 'fig2B_data_2017-12-31.csv'
+fig2C_model = 'fig2C_model_2018-04-03.csv'
+fig2C_data = 'fig2C_data_2018-04-07.csv'
 
 fig3A_samples = 'fig3A_samples_2017-12-31.h5'
 fig3A_data = 'fig3A_data_2017-12-31.csv'
