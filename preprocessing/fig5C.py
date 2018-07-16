@@ -32,7 +32,6 @@ predict = (model_foil.predict(d,use_dataframe=True).
            groupby(['posttest','stimulus_label']).y.
            apply(ss.coef_stats_ns).unstack(level=2).reset_index())
 
-
 data_file = op.join("preprocessing","data","fig5C_data_"+dt+".csv")
 lcl.to_csv(data_file,header=True)
 print "Created "+data_file
