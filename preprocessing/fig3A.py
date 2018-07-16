@@ -7,7 +7,7 @@ c = (setup.counts.query('condition == ["4th","4th_gen"] and day == 4').
      groupby(['regimen','sid','condition','meanpre'])['mean'].
      agg(np.mean).reset_index())
 
-model_samples = op.join("preprocessing","data","fig3A_samples_"+dt+".h5")
+model_samples = op.join("preprocessing","data","fig4A_samples_"+dt+".h5")
 if op.isfile(model_samples):
   os.remove(model_samples)
 model = regress.robit("mean ~ center(meanpre) + regimen * condition",
@@ -19,15 +19,15 @@ d = c.groupby(['condition','regimen']).meanpre.mean().reset_index()
 p = model.predict(d,use_dataframe=True)
 
 predict = (p.set_index(['regimen','condition','sample']).y.
-          groupby(level=['regimen','condition']).apply(ss.coef_stats_ns).
-          unstack(level=2).reset_index())
+           groupby(level=['regimen','condition']).apply(ss.coef_stats_ns).
+           unstack(level=2).reset_index())
 
 
-data_file = op.join("preprocessing","data","fig3A_data_"+dt+".csv")
+data_file = op.join("preprocessing","data","fig4A_data_"+dt+".csv")
 c.to_csv(data_file,header=True)
 print "Created "+data_file
 
-model_file = op.join("preprocessing","data","fig3A_model_"+dt+".csv")
+model_file = op.join("preprocessing","data","fig4A_model_"+dt+".csv")
 predict.to_csv(model_file,header=True)
 print "Created "+model_file
 
