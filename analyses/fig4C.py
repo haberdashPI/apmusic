@@ -2,10 +2,10 @@ import os.path as op
 execfile(op.join('util','header.py'))
 execfile(op.join('preprocessing','files.txt'))
 
-df = pd.read_csv(op.join('preprocessing','data',fig4B_data))
+df = pd.read_csv(op.join('preprocessing','data',fig5B_data))
 model_reg = regress.robit('mean ~ posttest*regimen',df,error_prior=100,
-                      cache_file=op.join("preprocessing","data",
-                                         fig4C_samples_byregimen))
+                          cache_file=op.join("preprocessing","data",
+                                             fig5C_samples_byregimen))
 
 print "----------------------------------------"
 print "Does the regimen matter?"
@@ -24,12 +24,11 @@ pdf = pdf.unstack('regimen')
 print ss.contrast_table(pdf*100,pdf.columns)
 
 
-
-df = pd.read_csv(op.join('preprocessing','data',fig4C_data))
+df = pd.read_csv(op.join('preprocessing','data',fig5C_data))
 model_foil = regress.robit('mean ~ center(posttest)*stimulus_label',df,
                            error_prior=100,
                            cache_file=op.join("preprocessing","data",
-                                              fig4C_samples_byfoil))
+                                              fig5C_samples_byfoil))
 
 
 print "----------------------------------------"
