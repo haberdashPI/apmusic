@@ -1,24 +1,32 @@
+library(cowplot)
+library(dplyr)
+library(tidyr)
 library(ggplot2)
-source(file.path('preprocessing','files.txt'))
+source(file.path("preprocessing","files.txt"))
 
-df = read.csv(file.path("preprocessing","data",fig2B_data))
-model = read.csv(file.path("preprocessing","data",fig2B_model))
+df = read.csv(file.path("preprocessing","data",fig3A_data))
 
-pl = ggplot(df,aes(x=day,y=mcorrect,group=sid)) + facet_wrap(~regimen,ncol=4)
-pl = pl + geom_ribbon(data=model,fill='gray',alpha=0.5,mapping=aes(ymin=mean-SE,ymax=mean+SE,y=mean))
-pl = pl + geom_line(data=model,size=1,alpha=0.8,mapping=aes(y=mean,color=p_imp < 0.05))
-pl = pl + geom_line(linetype=3,size=0.5)
-pl = pl + geom_point(size=1.3)
-pl = pl + geom_text(data=subset(model,day == 4),aes(label=round(imp,1),y=mean,group=sid),
-                    hjust=-0.25,position=position_dodge(width=0.5),size=3)
-pl = pl + coord_cartesian(xlim=c(0.75,5))
-pl = pl + scale_y_continuous(breaks=5:10/10,labels=5:10*10)
-pl = pl + scale_color_brewer(palette='Set1')
-pl = pl + theme_classic()
+df = df %>%
+  select(regimen,sid,day,mean) %>%
+  spread(day,mean) %>%
+  rename(day1 = "1",day4 = "4") %>%
+  select(regimen,sid,day1,day4)
 
-file = file.path('plots','pdfs',paste('fig2B_',Sys.Date(),'.pdf',sep=''))
-ggsave(file,pl,width=10,height=6,useDingbats=FALSE)
+ggplot(df,aes(x=day1,y=day4)) +
+  geom_polygon(data=data.frame(x=c(0.45,1,1,0.45),y=c(0.45,1,0.45,0.45)),
+               aes(x,y),alpha=0.5) +
+  geom_smooth(method="lm",aes(color=regimen),level=0) +
+  geom_point(aes(shape=regimen,fill=regimen),size=4) +
+  scale_shape_manual(values=c(22,23,21,24)) +
+  scale_x_continuous(breaks=5:10/10,labels=5:10*10) +
+  scale_y_continuous(breaks=5:10/10,labels=5:10*10) +
+  xlab("Day 1 (% Correct)") +
+  ylab("Day 4 (% Correct)") +
+  coord_fixed(xlim=c(0.45,1),ylim=c(0.45,1))
 
-cat('Created file ')
+file = file.path("plots","pdfs",paste("fig3C_",Sys.Date(),".pdf",sep=""))
+ggsave(file,width=8,height=6,useDingbats=FALSE)
+
+cat("Created file ")
 cat(file)
-cat('\n')
+cat("\n")
