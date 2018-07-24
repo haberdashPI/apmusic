@@ -8,7 +8,7 @@ c = c.groupby(['regimen','day','sid','foil_label']).agg(np.mean).reset_index()
 model = regress.robit('mean ~ (day + day:regimen) * foil_label',
                       c,r=1e-2,error_prior=100,
                       cache_file=op.join("preprocessing","data",
-                                         fig3A_byfoil_samples))
+                                         fig2A_byfoil_samples))
 
 print "----------------------------------------"
 print "validation:"
