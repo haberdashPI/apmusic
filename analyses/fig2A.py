@@ -7,7 +7,7 @@ c = c.groupby(['regimen','day','sid']).agg(np.mean).reset_index()
 
 model = regress.robit('mean ~ day * regimen',c,r=1e-24,
                       error_prior=100,
-                      cache_file=op.join("preprocessing","data",fig2A_samples))
+                      cache_file=op.join("preprocessing","data",fig3A_samples))
 print "----------------------------------------"
 print "validation:"
 print model.validate()
