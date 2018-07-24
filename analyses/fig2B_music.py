@@ -24,15 +24,17 @@ print ss.coef_stats(100*(ilogit(imp_s)-0.5).reshape(-1))
 d = (model.init.df.query('day in [1,4]').
      groupby(['day','regimen','sid','foil_label','experience']).
         meanpre.mean().reset_index())
-d.experience = d.experience.mean() # set musical experience to population mean
+d.experience = d.experience.mean()  # set musical experience to population mean
 pind = (slm.predict(model,d,use_dataframe=True).
-        set_index(['regimen','sid','foil_label','day','sample','experience']).y)
+        set_index(['regimen','sid','foil_label','day',
+                   'sample','experience']).y)
 
 days = pind.unstack(['day'])
 days['imp'] = days[4] - days[1]
 simp = days.groupby(level=['regimen','sid','sample']).imp.mean()*100
-ind = simp.groupby(level=['regimen','sid']).apply(ss.coef_stats).unstack(level=2)
+ind = (simp.groupby(level=['regimen','sid']).
+       apply(ss.coef_stats).unstack(level=2))
 
 print "----------------------------------------"
-print "% improvement by individual, after removing effect of musical experience"
+print "individual % improvement, after removing effect of musical experience"
 print ind

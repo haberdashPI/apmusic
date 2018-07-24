@@ -1,7 +1,7 @@
 require(boot)
 source(file.path('preprocessing','files.txt'))
 
-data = read.csv(file.path('preprocessing','data',fig1C_data))
+data = read.csv(file.path('preprocessing','data',fig2C_data))
 
 means = aggregate(experience ~ regimen + sid,data,mean)
 
