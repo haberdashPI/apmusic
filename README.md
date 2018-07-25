@@ -52,6 +52,10 @@ source activate apmusic_2018_07_24
 This setup will take some time to run on your machine as various python and R
 software packages are installed.
 
+> **Troubleshooting**: If there is any issue with creating
+> the above environment, you can attempt to reconstruct it 
+> from the `create_environment.sh` script.
+
 ## Mac OS X - Make sure you have command-line developer tools installed
 
 On Mac OS X, if you plan to re-run any of the python preprocessing steps, you
@@ -67,12 +71,12 @@ line and run the following
 
 ```sh
 cd [project directory]
-source activate apmusic_2017_03_02
+source activate apmusic_2018_07_24
 ```
 
 > Again, in Windows these command can be run on the command line that is 
 > installed with Anaconda and you will need to replace the last line
-> with `activate apmusic_2017_03_02` (no `source`).
+> with `activate apmusic_2018_07_24` (no `source`).
 
 Each figure panel from the paper generally has at least two corresponding
 files. They are either python or R source files, and they re-create the figure
@@ -166,7 +170,6 @@ in the analysis: AP (Practice+Exposure), LA (All-Practice), SA
 (Practice+Silence),and P (Exposure+Silence).
 
 # Comparison to Published Figures and Statistics
-
 The resulting pdfs from the analysis were imported into Adobe Illustrator and
 the aesthetics modified for improved legibility and consistency across plots.
 Thus the published figures will differ somewhat from those produced by these
