@@ -23,19 +23,22 @@ intercept_63 = mu[:,0] - mu[:,2]*slope_63
 
 
 xs = np.linspace(0.4,1)
-ys = ilogit(logit(xs[:,np.newaxis])*slope_35[np.newaxis,:] + intercept_35[np.newaxis,:])
+ys = (ilogit(logit(xs[:,np.newaxis])*slope_35[np.newaxis,:] +
+      intercept_35[np.newaxis,:]))
 bounds = ss.mean_bounds(ys.T)
 pred_35 = pd.DataFrame({'x': xs,'y': np.median(ys,axis=1),
                         'ymin': bounds.lower, 'ymax': bounds.upper,
                         'a': '3rd', 'b': '5th'})
 
-ys = ilogit(logit(xs[:,np.newaxis])*slope_56[np.newaxis,:] + intercept_56[np.newaxis,:])
+ys = (ilogit(logit(xs[:,np.newaxis])*slope_56[np.newaxis,:] +
+      intercept_56[np.newaxis,:]))
 bounds = ss.mean_bounds(ys.T)
 pred_56 = pd.DataFrame({'x': xs,'y': np.median(ys,axis=1),
                         'ymin': bounds.lower, 'ymax': bounds.upper,
                         'a': '5th', 'b': '6th'})
 
-ys = ilogit(logit(xs[:,np.newaxis])*slope_63[np.newaxis,:] + intercept_63[np.newaxis,:])
+ys = (ilogit(logit(xs[:,np.newaxis])*slope_63[np.newaxis,:] +
+      intercept_63[np.newaxis,:]))
 bounds = ss.mean_bounds(ys.T)
 pred_63 = pd.DataFrame({'x': xs,'y': np.median(ys,axis=1),
                         'ymin': bounds.lower, 'ymax': bounds.upper,
