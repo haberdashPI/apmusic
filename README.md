@@ -1,9 +1,10 @@
 # Introduction
 
-This project archives the results for the following, in-submission publication:
+This project archives the results for the following, in-press publication:
 
-Inducing musical-interval learning by combining task practice with periods of
-stimulus exposure alone
+D.F. Little, H.H. Cheng, B.A. Wright, (2018) Inducing musical-interval learning
+by combining task practice with periods of stimulus exposure alone. Attention,
+Perception and Psychophysics.
 
 ## Abstract
 
@@ -30,11 +31,10 @@ perception.
 
 # Installation
 
-Once you have downloaded this project, to setup the development environment
+Once you have downloaded this project, to setup the development environment you
 will need to install [Anaconda Python 2.7](https://www.anaconda.com/download/).
-Once you're finished with the installation, run the following commands on the
-command line (replacing `[project directory]` with the location of the folder
-containing the downloaded project).
+Then, run the following commands on the command line (replacing `[project
+directory]` with the location of the folder containing the downloaded project).
 
 ```sh
 cd [project directory]
